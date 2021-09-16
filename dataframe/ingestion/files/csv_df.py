@@ -24,11 +24,8 @@ if __name__ == '__main__':
 
     # Setup spark to use s3
     hadoop_conf = spark.sparkContext._jsc.hadoopConfiguration()
+    print("Hadoop")
     print(hadoop_conf)
-    print("----------")
-    print(hadoopConfiguration())
-    print("----------")
-    print(_jsc)
     hadoop_conf.set("fs.s3a.access.key", app_secret["s3_conf"]["access_key"])
     hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"]["secret_access_key"])
 
